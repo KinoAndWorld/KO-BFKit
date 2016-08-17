@@ -62,36 +62,6 @@
     return button;
 }
 
-- (void)setNavgationCitySelectionWithCityName:(NSString *)currentCityName
-                                   cityButton:(UIButton *)cityButton{
-    
-    CGFloat TitleViewWidthMax = SCREEN_WIDTH - 100;
-    
-    UIView *iv = [[UIView alloc] initWithFrame:CGRectMake(0,0,TitleViewWidthMax,44)];
-    [iv setBackgroundColor:[UIColor clearColor]];
-    
-    CGSize cityNameSize = [currentCityName sizeWithFont:[UIFont systemFontOfSize:15]];
-    cityNameSize.width = MIN(TitleViewWidthMax, cityNameSize.width+5);
-    
-    [cityButton setFrame:CGRectMake(iv.frame.size.width/2 - cityNameSize.width/2, 0, cityNameSize.width, 44)];
-    [cityButton setTitle:currentCityName
-                 forState:UIControlStateNormal];
-    [cityButton setTitleColor:[UIColor colorWithRed:0.448 green:0.293 blue:0.152 alpha:1.000]
-                      forState:UIControlStateNormal];
-//    [cityButton addTarget:self action:@selector(citySelectAction) forControlEvents:UIControlEventTouchUpInside];
-    cityButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    cityButton.titleLabel.adjustsFontSizeToFitWidth = YES;
-    cityButton.titleLabel.minimumScaleFactor = 0.5f;
-    
-    UIImageView *titleIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(cityButton.frame.origin.x + cityButton.frame.size.width + 2, 18, 12, 9)];
-    titleIndicator.image = [UIImage imageNamed:@"expandIcon"];
-    [iv addSubview:titleIndicator];
-    
-    [iv addSubview:cityButton];
-    
-    self.navigationItem.titleView = iv;
-}
-
 - (void)setNavigationBarWithImage:(UIImage *)image{
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }

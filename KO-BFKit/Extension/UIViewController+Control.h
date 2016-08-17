@@ -22,9 +22,6 @@ typedef enum {
                               textColor:(UIColor *)textColor
                                position:(NavgationItemPosition)position;
 
-- (void)setNavgationCitySelectionWithCityName:(NSString *)currentCityName
-                                   cityButton:(UIButton *)cityButton;
-
 - (void)setNavigationBarWithImage:(UIImage *)image;
 
 - (void)changeNavgationBarAlpha:(CGFloat)alpha;
